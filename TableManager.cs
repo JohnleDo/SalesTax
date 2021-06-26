@@ -26,11 +26,7 @@ namespace SalesTax
                 if (item.ItemName.ToLower() == newItem.ItemName.ToLower() && item.Price == newItem.Price && item.TaxRate == newItem.TaxRate)
                 {
                     item.Quantity += newItem.Quantity;
-                    this.TotalPrice -= newItem.TotalPrice;
-                    this.TotalSalesTax -= item.TotalSalesTax;
                     item.UpdateTotalPrice();
-                    this.TotalSalesTax += item.TotalSalesTax;
-                    this.TotalPrice +=  item.TotalPrice;
                     itemFound = true;
                 }
             }
@@ -38,8 +34,19 @@ namespace SalesTax
             if (itemFound == false)
             {
                 this.ListofItems.Add(newItem);
-                this.TotalSalesTax += newItem.TotalSalesTax;
-                this.TotalPrice += newItem.TotalPrice;
+            }
+            this.UpdateTablePrices();
+        }
+
+        public void UpdateTablePrices()
+        {
+            this.TotalSalesTax = 0.00;
+            this.TotalPrice = 0.00;
+
+            foreach (var item in ListofItems)
+            {
+                this.TotalSalesTax += item.TotalSalesTax;
+                this.TotalPrice += item.TotalPrice;
             }
         }
 

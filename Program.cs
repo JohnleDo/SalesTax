@@ -6,6 +6,64 @@ namespace SalesTax
 {
     class Program
     {
+        static double FindTaxRate()
+        {
+            while (true)
+            {
+                Console.Write("Is the item imported? (Y/N) : ");
+                var imported = Console.ReadLine();
+
+                if (imported.ToLower() == "y" || imported.ToLower() == "yes")
+                {
+                    while (true)
+                    {
+                        Console.Write("Is this item a book, food, or medical product? (Y/N): ");
+                        var otherType = Console.ReadLine();
+
+                        if (otherType.ToLower() == "y" || otherType.ToLower() == "yes")
+                        {
+                            return 0.05;
+                        }
+                        else if (otherType.ToLower() == "n" || otherType.ToLower() == "no")
+                        {
+                            return 0.15;
+                        }
+                        else
+                        {
+                            Console.WriteLine("Invalid Input, please try again.");
+                        }
+                    }
+
+                }
+                else if (imported.ToLower() == "n" || imported.ToLower() == "no")
+                {
+                    while (true)
+                    {
+                        Console.Write("Is this item a book, food, or medical product? (Y/N): ");
+                        var otherType = Console.ReadLine();
+
+                        if (otherType.ToLower() == "y" || otherType.ToLower() == "yes")
+                        {
+                            return 0.00;
+                        }
+                        else if (otherType.ToLower() == "n" || otherType.ToLower() == "no")
+                        {
+                            return 0.10;
+                        }
+                        else
+                        {
+                            Console.WriteLine("Invalid Input, please try again.");
+                        }
+                    }
+                }
+
+                else
+                {
+                    Console.WriteLine("Invalid Input, please try again.");
+                }
+            }
+        }
+
         static TableManager MenuOptions(TableManager itemTable)
         {
             var item = new Item();
@@ -33,60 +91,8 @@ namespace SalesTax
                             Console.Write("Item Price: ");
                             item.Price = Double.Parse(Console.ReadLine());
 
-                            Console.Write("Is the item imported? (Y/N) : ");
-                            var imported = Console.ReadLine();
-                            if (imported.ToLower() == "y" || imported.ToLower() == "yes")
-                            {
-                                item.TaxRate = 0.05;
-
-                                Console.Write("Is this item a book, food, or medical product? (Y/N): ");
-                                var otherType = Console.ReadLine();
-
-                                if (otherType.ToLower() == "y" || otherType.ToLower() == "yes")
-                                {
-                                    item.TaxRate += 0.00;
-                                    break;
-                                }
-                                else if (otherType.ToLower() == "n" || otherType.ToLower() == "no")
-                                {
-                                    item.TaxRate += 0.10;
-                                    break;
-                                }
-                                else
-                                {
-                                    Console.WriteLine("Invalid Input, please try again.");
-                                }
-
-                            }
-                            else if (imported.ToLower() == "n" || imported.ToLower() == "no")
-                            {
-                                Console.Write("Is this item a book, food, or medical product? (Y/N): ");
-                                var otherType = Console.ReadLine();
-
-                                if (otherType.ToLower() == "y" || otherType.ToLower() == "yes")
-                                {
-                                    item.TaxRate += 0.00;
-                                    break;
-                                }
-                                else if (otherType.ToLower() == "n" || otherType.ToLower() == "no")
-                                {
-                                    item.TaxRate += 0.10;
-                                    break;
-                                }
-                                else
-                                {
-                                    Console.WriteLine("Invalid Input, please try again.");
-                                }
-                            }
-
-                            else
-                            {
-                                Console.WriteLine("Invalid Input, please try again.");
-                            }
-
-
+                            item.TaxRate = FindTaxRate();
                             item.UpdateTotalPrice();
-
                             itemTable.AddItem(item);
 
                             Console.WriteLine("\n***** Output *****");
