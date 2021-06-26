@@ -1,0 +1,13 @@
+E:\Desktop\Git\SalesTax\bin\Debug\netcoreapp3.1\SalesTax.exe
+E:\Desktop\Git\SalesTax\bin\Debug\netcoreapp3.1\SalesTax.deps.json
+E:\Desktop\Git\SalesTax\bin\Debug\netcoreapp3.1\SalesTax.runtimeconfig.json
+E:\Desktop\Git\SalesTax\bin\Debug\netcoreapp3.1\SalesTax.runtimeconfig.dev.json
+E:\Desktop\Git\SalesTax\bin\Debug\netcoreapp3.1\SalesTax.dll
+E:\Desktop\Git\SalesTax\bin\Debug\netcoreapp3.1\SalesTax.pdb
+E:\Desktop\Git\SalesTax\obj\Debug\netcoreapp3.1\SalesTax.csprojAssemblyReference.cache
+E:\Desktop\Git\SalesTax\obj\Debug\netcoreapp3.1\SalesTax.AssemblyInfoInputs.cache
+E:\Desktop\Git\SalesTax\obj\Debug\netcoreapp3.1\SalesTax.AssemblyInfo.cs
+E:\Desktop\Git\SalesTax\obj\Debug\netcoreapp3.1\SalesTax.dll
+E:\Desktop\Git\SalesTax\obj\Debug\netcoreapp3.1\SalesTax.pdb
+E:\Desktop\Git\SalesTax\obj\Debug\netcoreapp3.1\SalesTax.genruntimeconfig.cache
+E:\Desktop\Git\SalesTax\obj\Debug\netcoreapp3.1\SalesTax.csproj.CoreCompileInputs.cache
