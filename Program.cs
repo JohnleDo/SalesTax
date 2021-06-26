@@ -1,6 +1,4 @@
 ﻿using System;
-using System.Collections.Generic;
-using System.Linq;
 
 namespace SalesTax
 {
@@ -97,10 +95,13 @@ namespace SalesTax
 
                             Console.WriteLine("\n***** Output *****");
                             itemTable.PrintTable();
+                            Console.WriteLine("\n******************");
                             return itemTable;
 
                         case "2":
                             itemTable = new TableManager();
+                            Console.WriteLine("\n***** Table Resetted *****");
+                            Console.WriteLine("\n***************************");
                             return itemTable;
 
                         case "3":
